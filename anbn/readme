@@ -1,0 +1,18 @@
+Build and Run
+--------------
+
+Build the binary using the usual command
+make
+from your terminal, per the Makefile present.
+
+The main() fucntion now optionally takes argument. The effect is that you can now feed the program input via a text file. That spares you the trouble of entering input from the console every time you run the program. So you issue the command
+./anbn0 input
+and the program gets fed input from the text file "input" that remains within the current directoty. Of course you should edit the file "input" if you want to run with a bunch of input different from what is in there now. Or, you may have other text files too containing separate sets of input and replace "input" with the name of another file as such.
+Yet, you are not forced to entirely deprive yourself of such trouble (!), and you may well run the program issuing the command
+./anbn0
+only when you insist on feeding the program input from the console.
+
+
+Changes made
+-------------
+Apart from the part that deals with arguments of the main() function, there is a bit of changes in code for error handling that is embedded in the grammar by means of bison's reserved word "error". This enables you to keep feeding inputs -- both acceptable as well as unacceptable ones where the delimeter is '\n'. The empty string is also accepted in this version (the case of n=0), and that called for an extra nonterminal (can that be avoided?). Termination is via Cntrl-D, which gives EOF.
